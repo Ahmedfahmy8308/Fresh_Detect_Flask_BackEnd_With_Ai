@@ -42,7 +42,7 @@
 
 1. **Clone the repository**:
    ```bash
-   git clone <your-repo-url>
+   git clone <https://github.com/Ahmedfahmy8308/Fresh_Detect_Flask_BackEnd_With_Ai>
    cd flask
 
 2. Create a virtual environment:
