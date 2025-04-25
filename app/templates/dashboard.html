@@ -1,0 +1,14 @@
+{% extends "layout.html" %}
+{% block content %}
+  <h2>📈 Dashboard</h2>
+  <div>
+    <p>Total Admins: {{ counts.admins }}</p>
+    <p>Total Devices: {{ counts.devices }}</p>
+    <p>Total Images: {{ counts.images }}</p>
+    <p>Total Feedbacks: {{ counts.feedbacks }}</p>
+    <p>Average Quality Score: {{ avg_quality_score }}</p>
+    <p>Excellent: {{ quality_counts.excellent }}</p>
+    <p>Low Quality: {{ quality_counts.low }}</p>
+    <p>Error: {{ quality_counts.error }}</p>
+  </div>
+{% endblock %}

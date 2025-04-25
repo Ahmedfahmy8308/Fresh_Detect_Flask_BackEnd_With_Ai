@@ -1,0 +1,10 @@
+Flask
+Flasgger
+torch
+torchvision
+Pillow
+python-dotenv
+pymongo
+Flask
+gunicorn
+werkzeug
