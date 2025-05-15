@@ -64,9 +64,16 @@
 1. **Clone the repository:**
    ```bash
    git clone <your-repo-url>
-   cd Fresh_Detect_Flask_BackEnd_With_Ai
+   cd flask
+
+2. Create a virtual environment:
+
    ```
-2. **Create and activate a virtual environment:**
+   python -m venv venv
+   ```
+
+3. Activate the virtual environment:
+
    - On Windows:
      ```bash
      python -m venv venv
