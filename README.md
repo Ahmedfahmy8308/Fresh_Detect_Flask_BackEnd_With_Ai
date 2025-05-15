@@ -62,9 +62,12 @@
 ## Installation Guide
 
 1. **Clone the repository:**
+
    ```bash
-   git clone <your-repo-url>
+   git clone <https://github.com/Ahmedfahmy8308/Fresh_Detect_Flask_BackEnd_With_Ai>
    cd flask
+
+   ```
 
 2. Create a virtual environment:
 
@@ -84,16 +87,17 @@
      python3 -m venv venv
      source venv/bin/activate
      ```
-3. **Install dependencies:**
+
+4. **Install dependencies:**
    ```bash
    pip install -r requirements.txt
    ```
-4. **Start MongoDB** (ensure it's running on `localhost:27017`).
-5. **Run the application:**
+5. **Start MongoDB** (ensure it's running on `localhost:27017`).
+6. **Run the application:**
    ```bash
    python main.py
    ```
-6. **Access:**
+7. **Access:**
    - Dashboard: [http://127.0.0.1:5000](http://127.0.0.1:5000)
    - API Docs: [http://127.0.0.1:5000/apidocs](http://127.0.0.1:5000/apidocs)
 
