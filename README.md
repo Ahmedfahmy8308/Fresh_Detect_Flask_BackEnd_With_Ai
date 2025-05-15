@@ -14,80 +14,82 @@
 - [API Endpoints Documentation](#api-endpoints-documentation)
 - [How the AI Model is Used](#how-the-ai-model-is-used)
 - [Screenshots & Code Examples](#screenshots--code-examples)
+- [Testing](#testing)
+- [Troubleshooting & FAQ](#troubleshooting--faq)
 - [License](#license)
 - [Contribution Guidelines](#contribution-guidelines)
 - [Future Improvements / Limitations](#future-improvements--limitations)
+- [Contact](#contact)
 
 ---
 
 ## Project Overview
 
-**FreshDetect** is a Flask-based backend system that leverages deep learning (ResNet18) for real-time classification of fruits and vegetables as fresh or rotten. It provides a RESTful API for mobile clients, an admin dashboard for monitoring, and stores all metadata and results in MongoDB. The system supports device registration, image uploads, AI-powered predictions, feedback collection (voice messages), and comprehensive admin management.
+**FreshDetect** is a comprehensive backend system built with Flask and powered by a deep learning model (ResNet18) to classify fruits and vegetables as fresh or rotten from images. The system allows device registration, image uploads, AI-based analysis, user voice feedback collection, and provides an admin dashboard for monitoring, with all data stored in MongoDB.
+
+**Project Objectives:**
+
+- Automate and accelerate the process of assessing the quality of agricultural products.
+- Provide a robust API that can be integrated with mobile applications or other systems.
+- Enable administrators to monitor devices, results, and analyze data efficiently.
 
 ---
 
 ## System Architecture
 
-- **Flask Web Server**: Handles API requests, admin dashboard, and static file serving.
-- **MongoDB**: Stores all persistent data (admins, devices, images, analysis results, feedback).
-- **AI Model (PyTorch)**: Loads a pre-trained ResNet18 model for image classification.
-- **Blueprints**: Modularizes routes for devices, images, feedback, and admin features.
-- **Services Layer**: Encapsulates business logic (e.g., saving images, running predictions).
-- **Templates**: Jinja2 HTML templates for the admin dashboard.
+- **Flask Web Server:** Handles API requests and admin dashboard.
+- **MongoDB:** Stores all data (devices, images, results, feedback, admins).
+- **AI Model (PyTorch):** Loads a pre-trained model for image analysis.
+- **Blueprints:** Organizes code into modules (routes/controllers).
+- **Services Layer:** Business logic (image saving, prediction, data management).
+- **Templates:** HTML templates for the admin dashboard.
 
-**High-Level Flow:**
+**Simplified Architecture Diagram:**
 
-1. Device registers via API.
-2. Device uploads an image.
-3. Image is saved, AI model predicts class/quality, results stored in DB.
-4. Admins access dashboard to view/manage data and statistics.
+```
+[Device/Mobile] --API--> [Flask Backend] --AI--> [Prediction]
+                                   |                |
+                                   v                v
+                              [MongoDB]        [Admin Dashboard]
+```
 
 ---
 
 ## Technologies Used
 
-- **Flask**: Web framework for Python.
-- **Flasgger**: Swagger/OpenAPI documentation for Flask APIs.
-- **PyTorch**: Deep learning framework for AI model inference.
-- **Torchvision**: Image transformations and model utilities.
-- **Pillow**: Image processing.
-- **MongoDB**: NoSQL database.
-- **pymongo**: MongoDB driver for Python.
-- **Jinja2**: Templating engine for HTML.
-- **gunicorn**: Production WSGI server.
-- **Werkzeug**: WSGI utilities.
+- **Flask**: Web framework for Python
+- **Flasgger**: Swagger/OpenAPI documentation
+- **PyTorch**: Deep learning framework
+- **Torchvision**: Image transformations
+- **Pillow**: Image processing
+- **MongoDB**: NoSQL database
+- **pymongo**: MongoDB driver
+- **Jinja2**: HTML templating
+- **gunicorn**: Production WSGI server
+- **Werkzeug**: WSGI utilities
 
 ---
 
 ## Installation Guide
 
 1. **Clone the repository:**
-
    ```bash
-   git clone <https://github.com/Ahmedfahmy8308/Fresh_Detect_Flask_BackEnd_With_Ai>
-   cd flask
-
+   git clone https://github.com/Ahmedfahmy8308/Fresh_Detect_Flask_BackEnd_With_Ai.git
+   cd Fresh_Detect_Flask_BackEnd_With_Ai
    ```
-
-2. Create a virtual environment:
-
-   ```
+2. **Create a virtual environment:**
+   ```bash
    python -m venv venv
    ```
-
-3. Activate the virtual environment:
-
+3. **Activate the virtual environment:**
    - On Windows:
      ```bash
-     python -m venv venv
      venv\Scripts\activate
      ```
    - On macOS/Linux:
      ```bash
-     python3 -m venv venv
      source venv/bin/activate
      ```
-
 4. **Install dependencies:**
    ```bash
    pip install -r requirements.txt
@@ -246,6 +248,26 @@ def register_device():
 
 ---
 
+## Testing
+
+- **Unit Tests:**
+  - You can add tests using `pytest` or `unittest` to ensure code quality.
+- **Manual Testing:**
+  - Try uploading different images using Postman or any API tool and check the results in the dashboard.
+
+---
+
+## Troubleshooting & FAQ
+
+- **MongoDB Connection Error:**
+  - Make sure MongoDB service is running on your machine (`localhost:27017`).
+- **Model Not Found:**
+  - Ensure `best_model.pth` exists in the `Model/` directory.
+- **Image Upload Issues:**
+  - Make sure images are in a supported format (JPEG/PNG) and of reasonable size.
+
+---
+
 ## License
 
 This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
@@ -272,7 +294,15 @@ Contributions are welcome! Please follow these steps:
 - **Feedback Analysis:** Transcribe and analyze voice feedback.
 - **User Roles:** Add more granular admin/user roles.
 - **Frontend:** Build a dedicated frontend for end-users.
+- **Multi-language Support:** Add Arabic and other language support for the dashboard and user interface.
+- **User Experience:** Add notifications and alerts for admins.
 
 ---
 
-For any questions, contact [ahmedfahmy@ieee.org](mailto:ahmedfahmy@ieee.org).
+## Contact
+
+For any questions or support, contact: [ahmedfahmy@ieee.org](mailto:ahmedfahmy@ieee.org)
+
+---
+
+> This project was developed as a graduation project at the Faculty of Computer and Information, Domyat University, aiming to support digital transformation in the agricultural sector using artificial intelligence.
